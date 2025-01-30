@@ -24,11 +24,16 @@ echo "Running Dirsearch Scan..."
 dirsearch -u $TARGET
 
 echo "Running Nmap for Open Ports..."
-nmap -sV $TARGET
+nmap -sV  $TARGET
  
+echo "Running Nmap for Vulnerability scanner.."
+nmap -sV --script vuln $TARGET
+
 echo "Running Testssl for SSL Vulnerability.."
 testssl $TARGET
 
 echo "Running Nmap script to check Weak Ciphers.."
 nmap -sV --script ssl-enum-ciphers $TARGET
+
+
 
