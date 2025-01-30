@@ -8,24 +8,30 @@ if [ -z "$TARGET" ]; then
   exit 1
 fi
 
-echo "Running Nikto Scan..."
+echo "Running Nikto Vulnerability Scan..."
 nikto -h $TARGET -C all
 
-echo "Running Wapiti Scan..."
+echo "Running Wapiti Vulnerability Scan..."
 wapiti -u $TARGET
 
-echo "Running Nuclei Scan..."
+echo "Running Nuclei Vulnerability Scan..."
 nuclei -u $TARGET
 
-echo "Running Dirb Scan..."
+echo "Running Dirb Vulnerability Scan..."
 dirb $TARGET
 
 echo "Running Dirsearch Scan..."
 python3 dirsearch/dirsearch.py -u $TARGET
 
-echo "Running Nmap for Ports..."
+echo "Running Nmap for Open Ports..."
 nmap -sV $TARGET
 
 echo "Running Nmap for Vulnerability scanner..."
 nmap -sV --script vuln $TARGET
+
+echo "Running Testssl for SSL Vulnerability.."
+testssl $TARGET
+
+echo "Running Nmap script to check Weak Ciphers.."
+nmap -sV --script ssl-enum-ciphers $TARGET
 
