@@ -21,7 +21,7 @@ echo "Running Dirb Vulnerability Scan..."
 dirb $TARGET
 
 echo "Running Dirsearch Scan..."
-python3 dirsearch/dirsearch.py -u $TARGET
+dirsearch -u $TARGET
 
 echo "Running Nmap for Open Ports..."
 nmap -sV $TARGET
