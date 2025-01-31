@@ -57,9 +57,6 @@ testssl $TARGET
 echo "Running Nmap script to check Weak Ciphers.."
 nmap -sV --script ssl-enum-ciphers $IP
 
-#echo "Running to check Host header Injetion vulnerability.."
-
-
 echo "Running Sqlmap to find Sql injection.."
 sqlmap -u $TARGET --level=3 --crawl=3 --risk=3 --random-agent --batch --dbs
 
