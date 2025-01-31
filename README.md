@@ -24,7 +24,10 @@ To get started, follow these steps:
 ### 1. Clone the repository:
 
 git clone https://github.com/deepankarkumar1/web-scanning-tools.git
+
 cd web-scanning-tools
+
 pip install -r requirements.txt
+
 ./scan-tools.sh $TARGET
 
