@@ -3,6 +3,11 @@
 # Define target
 TARGET=$1
 
+TARGET="example.com"
+
+# Resolve the domain to an IP address for Nmap
+IP=$(dig +short $TARGET)
+
 if [ -z "$TARGET" ]; then
   echo "Usage: ./scan_tools.sh <target-url>"
   exit 1
@@ -24,16 +29,18 @@ echo "Running Dirsearch Scan..."
 dirsearch -u $TARGET
 
 echo "Running Nmap for Open Ports..."
-nmap -sV  $TARGET
+nmap -sV  $IP
  
 echo "Running Nmap for Vulnerability scanner.."
-nmap -sV --script vuln $TARGET
+nmap -sV --script vuln $IP
 
 echo "Running Testssl for SSL Vulnerability.."
 testssl $TARGET
 
 echo "Running Nmap script to check Weak Ciphers.."
-nmap -sV --script ssl-enum-ciphers $TARGET
+nmap -sV --script ssl-enum-ciphers $IP
+
+
 
 
 
