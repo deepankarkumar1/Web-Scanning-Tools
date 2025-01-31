@@ -13,6 +13,17 @@ if [ -z "$TARGET" ]; then
   exit 1
 fi
 
+if [ -n "$IP" ]; then
+    echo "Running Nmap for Open Ports..."
+    nmap -sV  $IP
+
+    echo "Running Nmap script to check Weak Ciphers.."
+    nmap -sV --script ssl-enum-ciphers $IP
+
+    echo "Running Nmap for Vulnerability scanner.."
+    nmap -sV --script vuln $IP
+fi
+
 echo "Running Nikto Vulnerability Scan..."
 nikto -h $TARGET -C all
 
@@ -28,17 +39,9 @@ dirb $TARGET
 echo "Running Dirsearch Scan..."
 dirsearch -u $TARGET
 
-echo "Running Nmap for Open Ports..."
-nmap -sV  $IP
- 
-echo "Running Nmap for Vulnerability scanner.."
-nmap -sV --script vuln $IP
-
 echo "Running Testssl for SSL Vulnerability.."
 testssl $TARGET
 
-echo "Running Nmap script to check Weak Ciphers.."
-nmap -sV --script ssl-enum-ciphers $IP
 
 
 
