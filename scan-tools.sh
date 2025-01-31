@@ -3,8 +3,6 @@
 # Define target
 TARGET=$1
 
-TARGET="example.com"
-
 # Resolve the domain to an IP address for Nmap
 IP=$(dig +short $TARGET)
 
