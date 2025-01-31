@@ -21,9 +21,9 @@ while IFS= read -r TARGET; do
   response=$(curl --max-time 5 -s -I -H "Host: cdac.in" -H "X-Forwarded-For: cdac.in" "$TARGET")
 
   if echo "$response" | grep -q "cdac.in"; then
-    print_color "31" "$TARGET is vulnerable to Host Header Injection"  # Red color for vulnerability
+    echo "31" "$TARGET is vulnerable to Host Header Injection"  
   else
-    print_color "32" "$TARGET is not vulnerable to Host Header Injection"  # Green color for no vulnerability
+    echo "32" "$TARGET is not vulnerable to Host Header Injection" 
   fi
 
 
