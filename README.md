@@ -9,6 +9,7 @@ A collection of web vulnerability scanning tools integrated into one package. Th
 - **Dirsearch** - A simple command-line tool designed for brute-forcing directories and files in web servers.
 - **Dir** - A tool for scanning directories on a web server.
 - **TestSSL** - A tool for checking SSL/TLS configuration of web servers.
+- **Sqlmap** - A tool for checking Sql Injection in Web Application.
 
 ## Features
 
