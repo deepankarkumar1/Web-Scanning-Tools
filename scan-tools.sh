@@ -15,17 +15,6 @@ fi
 if [ -z "$TARGET" ]; then
   echo "Usage: ./scan_tools.sh <target-url>"
   exit 1
-fi
-
-while IFS= read -r TARGET; do
-  response=$(curl --max-time 5 -s -I -H "Host: cdac.in" -H "X-Forwarded-For: cdac.in" "$TARGET")
-
-  if echo "$response" | grep -q "cdac.in"; then
-    echo "31" "$TARGET is vulnerable to Host Header Injection"  
-  else
-    echo "32" "$TARGET is not vulnerable to Host Header Injection" 
-  fi
-
 
 echo "Running Nikto Vulnerability Scan..."
 nikto -h $TARGET -C all
