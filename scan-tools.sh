@@ -7,14 +7,15 @@ TARGET=$1
 IP=$(dig +short $TARGET)
 
 if [ -z "$TARGET" ]; then
-  echo "Usage: ./scan_tools.sh <target-url>"
+  echo "Usage: ./scan-tools.sh <target-url>"
   exit 1
 fi
 
 # Check if a domain is provided
 if [ -z "$TARGET" ]; then
-  echo "Usage: ./scan_tools.sh <target-url>"
+  echo "Usage: ./scan-tools.sh <target-url>"
   exit 1
+fi
 
 echo "Running Nikto Vulnerability Scan..."
 nikto -h $TARGET -C all
