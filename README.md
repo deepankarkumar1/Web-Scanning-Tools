@@ -102,12 +102,3 @@ This project uses open-source tools, each under their respective licenses. Your 
 * Built with ♥ using open-source security tools.
 
 ```
-
----
-
-Let me know if you'd like:
-- Badges (for GitHub Actions, etc.)
-- Example output for each tool
-- `Dockerfile` or `Makefile` integration
-- Report generation in HTML/Markdown/PDF format
-```
