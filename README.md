@@ -100,5 +100,3 @@ This project uses open-source tools, each under their respective licenses. Your 
 
 * Maintained by [Deepankar Kumar](https://github.com/deepankarkumar1)
 * Built with ♥ using open-source security tools.
-
-```
