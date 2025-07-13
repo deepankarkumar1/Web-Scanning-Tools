@@ -1,32 +1,22 @@
-Here’s a well-structured `README.md` for your **Web Scanning Tools** project, formatted for GitHub:
+# Web Scanning Tools
 
----
+A collection of web vulnerability scanning tools integrated into one package. This project combines various open-source security tools to help identify vulnerabilities in web applications and servers. The tools used in this project are:
 
-````markdown
-# 🌐 Web Scanning Tools
+- **Nmap** - Network exploration and security auditing tool.
+- **Wapiti** - A web application vulnerability scanner.
+- **Nikto** - A web server scanner for detecting vulnerabilities.
+- **Nuclei** - A fast and customizable vulnerability scanner.
+- **Dirsearch** - A simple command-line tool designed for brute-forcing directories and files in web servers.
+- **Dirb** - A tool for scanning directories on a web server.
+- **TestSSL** - A tool for checking SSL/TLS configuration of web servers.
+- **Sqlmap** - A tool for checking Sql Injection in Web Application.
 
-A collection of web vulnerability scanning tools integrated into one package. This project combines various open-source security tools to help identify vulnerabilities in web applications and servers.
+## Features
 
-## 🔧 Tools Included
-
-- **Nmap** – Network exploration and security auditing.
-- **Wapiti** – Web application vulnerability scanner.
-- **Nikto** – Web server scanner to detect potential issues.
-- **Nuclei** – Fast and customizable vulnerability scanner.
-- **Dirsearch** – Command-line directory and file brute-forcing tool.
-- **Dirb** – Directory scanner for web servers.
-- **TestSSL** – SSL/TLS configuration tester for servers.
-- **Sqlmap** – SQL Injection vulnerability scanner.
-
----
-
-## 🚀 Features
-
-- 🔍 Scan web servers for a wide range of vulnerabilities.
-- 🧰 Combine multiple scanning tools in one workflow.
-- 📊 Generate consolidated reports (WIP or manually analyzed).
-- ⚙️ Custom scanning options for fine-tuned analysis.
-- ✅ Auto-install required tools (optional pre-check script).
+- Scan web servers for a wide range of vulnerabilities.
+- Run multiple security scans with ease using integrated tools.
+- Generate reports to analyze vulnerabilities in your web applications and infrastructure.
+- Support for custom scanning configurations and options for each tool.
 
 ---
 
@@ -81,7 +71,6 @@ web-scanning-tools/
 ├── check-and-install-tools.sh   # Installs and verifies all dependencies
 ├── scan-tools.sh                # Main scanning script
 ├── README.md                    # Project documentation
-└── (output/)                    # (Optional) Directory for reports/logs
 ```
 
 ---
